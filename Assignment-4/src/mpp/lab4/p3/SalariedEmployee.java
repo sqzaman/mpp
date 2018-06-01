@@ -9,7 +9,7 @@ public class SalariedEmployee extends Employee {
 	@Override
 	public double calcGrossPay(int month) {
 		// TODO Auto-generated method stub
-		return 0;
+		return montlySalary;
 	}
 
 }
