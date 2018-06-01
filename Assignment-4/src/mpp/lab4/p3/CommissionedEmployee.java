@@ -6,9 +6,9 @@ import java.util.List;
 public class CommissionedEmployee extends Employee {
 
 	List<Order> orders;
-	public CommissionedEmployee() {
+	public CommissionedEmployee(List<Order> orders) {
 		// TODO Auto-generated constructor stub
-		orders = new ArrayList<Order>();
+		this.orders = orders;
 	}
 
 	@Override
@@ -19,14 +19,6 @@ public class CommissionedEmployee extends Employee {
 			grossAmount += o.getOrderAmount();
 		}
 		return grossAmount;
-	}
-
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void addOrder(Order order) {
-		orders.add(order);
 	}
 
 }

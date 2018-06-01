@@ -8,11 +8,10 @@ public class Order {
 	double orderAmount;
 	Employee commissionedEmployee;
 	
-	public Order(int orderNo, Date orderDate, double orderAmount, Employee commissionedEmployee) {
+	public Order(int orderNo, Date orderDate, double orderAmount) {
 		this.orderNo = orderNo;
 		this.orderDate = orderDate;
 		this.orderAmount = orderAmount;
-		this.commissionedEmployee = commissionedEmployee;
 	}
 
 	public int getOrderNo() {
@@ -29,6 +28,10 @@ public class Order {
 
 	public Employee getCommissionedEmployee() {
 		return commissionedEmployee;
+	}
+
+	public void setCommissionedEmployee(Employee commissionedEmployee) {
+		this.commissionedEmployee = commissionedEmployee;
 	}
 	
 }
