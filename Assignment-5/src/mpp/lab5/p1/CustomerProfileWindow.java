@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-
 public class CustomerProfileWindow extends JFrame {
 	public CustomerProfileWindow() {
 		JButton button = new JButton("Update Profile Info");

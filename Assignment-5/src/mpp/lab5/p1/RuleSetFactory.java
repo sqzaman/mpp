@@ -3,15 +3,14 @@ package mpp.lab5.p1;
 import java.awt.Component;
 import java.util.HashMap;
 
-
 final public class RuleSetFactory {
 	private RuleSetFactory() {
 	}
 
 	static HashMap<Class<? extends Component>, RuleSet> map = new HashMap<>();
 	static {
-		map.put(AddressWindow.class, new AddressRuleSet());
-		map.put(CustomerProfileWindow.class, new CustomerProfileRuleSet());
+		map.put(AddrWindow.class, new AddressRuleSet());
+		map.put(ProfileWindow.class, new CustomerProfileRuleSet());
 	}
 
 	public static RuleSet getRuleSet(Component c) {

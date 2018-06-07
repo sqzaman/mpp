@@ -9,12 +9,12 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+
+
 public class AddressWindow extends JFrame {
 	public AddressWindow() {
 
-		// build Address screen
-
-		JButton button = new JButton("Submit Address Info");
+		JButton button = new JButton("Submit Address Information");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				RuleSet addressRules = RuleSetFactory.getRuleSet(AddressWindow.this);
@@ -39,5 +39,9 @@ public class AddressWindow extends JFrame {
 	}
 
 	private static final long serialVersionUID = 898343560683602553L;
+	
+	public String getZipValue() {
+		return "56756";
+	}
 
 }
