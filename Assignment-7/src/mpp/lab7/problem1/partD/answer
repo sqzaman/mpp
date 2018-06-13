@@ -1,0 +1,3 @@
+new field visited added in employee class which is always false and we are checking this value aso
+along with name and salary in equal method and also we are using this value in hashcode
+override function. if we reomove this 'visited' from those places it will work

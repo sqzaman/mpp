@@ -1,0 +1,3 @@
+1. ArrayList Extends 1 class and 6 interfaces
+Class: AbstractList
+Interfaces:  List, RandomAccess, Cloneable, java.io.Serializable, Collection, Iterable, 

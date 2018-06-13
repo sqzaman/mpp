@@ -1,0 +1,3 @@
+Hashmap uses hashcode of object as a key if you dont specify any specific key or if you specify
+entire object as a key. so you have to override hashcode of object class in Employee class, since 
+every java class inherited from object class

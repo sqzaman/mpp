@@ -1,0 +1,12 @@
+contains method uses equal method of object class,
+there is a equal method in Employee class but its not override the object's class equal method.
+to solve this issue we need to override like as bellow
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		if (obj==null) return false;
+		if (!(obj instanceOf Employee)) return false;
+		Employee e = (Employee)obj;
+		return return e.name.equals(name) && e.salary == salary;
+	}
+	
