@@ -1,0 +1,56 @@
+
+a) Name two differences between imperative and functional programming 
+
+Ans: 
+Imperative programming: uses a sequence of statements to determine
+ how to reach a certain goal. These statements are said to 
+ change the state of the program as each one is executed in turn.
+ 
+ Functional programming: The functional programming paradigm was explicitly created to 
+ support a pure functional approach to problem solving. 
+ Functional programming is a form of declarative programming.
+ 
+ b) Explain the meaning of declarative programming. Give an example. 
+ Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it. It is left up to the compiler to figure out the how.
+Examples of declarative programming languages are SQL
+
+c) Explain the difference between functional interface, functor, and closure, and give examples of each using Java 7 syntax 
+
+d. Name three benefits of including functional style programming in Java
+Ans: i) Consise, ii) Readable, iii) Thread safe
+
+e. Express the functions defined below using Church’s lambda notation:
+i. f(x) = x + 2x2 Ans: (x) -> λx.x+2xx
+ii. g(x,y) = y – x + xy
+iii. h(x,y,z) = z – (x + y) 
+
+f)For each lambda expression below, name the parameters and the free variables. 
+i. Runnable r = () ?
+ {
+int[][] products = new int[s][t];
+for (int i = 0; i < s; i++) {
+ for(int j = i + 1; j < t; j++) {
+ products[i][j] = i * j;
+}
+}
+ }
+Ans: no parameter and s and t is the free variable
+
+ii. BiFunction f = (double u, double v) ? ? cos ?? sin ??? ? 
+Ans: u and v is the parameter and a, b, d and x are free variable
+
+iii.Comparator comp = (s, t) ? { if(ignoreCase == true) { return s.compareToIgnoreCase(t); } else { return s.compareTo(t); } } 
+
+
+h. An example of a method reference is
+ System.out::println
+Do the following:
+i. Convert this method reference to a lambda expression.
+ans: s->System.out.println(s)
+ii. Determine which type of method reference this is (in the lecture three different types of method reference were mentioned). Explain carefully. 
+Ans: 
+Type: object::instanceMethod, because System.out is returning an instance of PrintStream object then we are calling println method from that object, though out is a static method of System class, still its returning PrintStream object.
+
+
+ 
+ 
