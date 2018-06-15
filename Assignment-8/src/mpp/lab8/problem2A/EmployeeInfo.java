@@ -29,7 +29,7 @@ public class EmployeeInfo {
 		// emps.add(new Employee("Joe", 50000));
 		// emps.add(new Employee("Andy", 60000));
 		Employee joe = new Employee("Joe", 100000);
-		Employee joe2 = new Employee("Joe2", 200000);
+		Employee joe2 = new Employee("Joe", 200000);
 		// List<Employee> list = Arrays.asList(joe, joe2);
 		// Collections.sort(list, new EmployeeNameComparator());
 		// System.out.println(list);
