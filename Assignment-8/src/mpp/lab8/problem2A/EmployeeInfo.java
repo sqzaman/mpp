@@ -24,6 +24,7 @@ public class EmployeeInfo {
 	}
 
 	public static void main(String[] args) {
+		/*
 		List<Employee> emps = new ArrayList<>();
 		// emps.add(new Employee("Joe", 100000));
 		// emps.add(new Employee("Joe", 50000));
@@ -44,5 +45,18 @@ public class EmployeeInfo {
 		 * EmployeeInfo(EmployeeInfo.SortMethod.BYSALARY); ei.sort(emps);
 		 * System.out.println(emps);
 		 */
+		
+		String str1 = "Zaman";
+	       String str2 = "Aaman";
+	       String str3 = "Zamal";
+
+	       int var1 = str1.compareTo( str2 );
+	       System.out.println("str1 & str2 comparison: "+var1);
+
+	       int var2 = str1.compareTo( str3 );
+	       System.out.println("str1 & str3 comparison: "+var2);
+
+	       int var3 = str2.compareTo(str3);
+	       System.out.println("str2 & str3 comparison: "+var3);
 	}
 }

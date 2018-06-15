@@ -10,23 +10,22 @@ public class EmployeeInfo {
 		BYNAME, BYSALARY
 	};
 
-	public void sort(List<Employee> emps, final SortMethod method) {
-		class EmployeeComparator implements Comparator<Employee> {
-			@Override
-			public int compare(Employee e1, Employee e2) {
-				if (method == SortMethod.BYNAME) {
+	public void sort(List<Employee> emps, SortMethod method) {
+
+		Collections.sort(emps, (e1, e2) -> {
+			if(method == SortMethod.BYNAME) {
+				if (e1.name.compareTo(e2.name) != 0)
 					return e1.name.compareTo(e2.name);
-				} else {
-					if (e1.salary == e2.salary)
-						return 0;
-					else if (e1.salary < e2.salary)
-						return -1;
-					else
-						return 1;
-				}
+				return e1.salary < e2.salary ? -1 : e1.salary == e2.salary ? 0 : 1;
+			} else {
+				if(e1.salary < e2.salary) return -1;
+				else if (e1.salary > e2.salary)
+					return 1;
+				else
+					return e1.name.compareTo(e2.name);
 			}
-		}
-		Collections.sort(emps, new EmployeeComparator());
+		});
+
 	}
 
 	public static void main(String[] args) {

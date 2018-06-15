@@ -1,0 +1,96 @@
+
+a) Name two differences between imperative and functional programming 
+i. Functional programming is declarative (“what”) rather than imperative (“how”) that makes code more "self-documenting".
+ii. Functional programming does not cause a change of state.
+
+ 
+ b) Explain the meaning of declarative programming. Give an example. 
+ Declarative programming is when you write your code in such a way that it describes what you want to do, and not how you want to do it. It is left up to the compiler to figure out the how.
+Examples of declarative programming languages are SQL
+
+c) Explain the difference between functional interface, functor, and closure, and give examples of each using Java 7 syntax 
+
+Functional interface: is an interface that has just one (abstract) method.
+Example: from Java 1.2, an intuitive example is Interface Comparable<T> has only one method:
+interface Comparator<T> {int compare(T o1, T o2); }
+
+ - Functor: An implementation of a functional interface is called a functor.
+Example:
+public class EmployeeNameComparator implements Comparator<Employee> {
+@Override 
+public int compare(Employee e1, Employee e2) {
+return e1.name.compareTo(e2.name);
+}
+}
+
+- Closure: A closure is a functor embedded inside another class, that is capable of remembering the state of its enclosing object.
+Example:
+public void sort(List<Employee> emps, final SortMethod method) {
+  class EmployeeComparator implements Comparator<Employee> {
+    @Override
+    public int compare(Employee e1, Employee e2) {
+      if(method == SortMethod.BYNAME) {
+        return e1.name.compareTo(e2.name); 
+      } else {
+        if(e1.salary == e2.salary) 
+          return 0; 
+        else if(e1.salary < e2.salary) 
+          return -1; else return 1; 
+      }
+    }
+  }
+  Collections.sort(emps, new EmployeeComparator());
+}
+
+
+d. Name three benefits of including functional style programming in Java
+i) Consise, ii) Readable, iii) Thread safe
+
+e. Express the functions defined below using Church’s lambda notation:
+i. f(x) = x + 2x2 			? ?x.x + 2x2
+ii. g(x,y) = y – x + xy 		? ?xy.y – x + xy
+iii. h(x,y,z) = z – (x + y)		? ?xyz.z – (x + y)
+
+f)For each lambda expression below, name the parameters and the free variables. 
+i. Runnable r = () ?
+ {
+int[][] products = new int[s][t];
+for (int i = 0; i < s; i++) {
+ for(int j = i + 1; j < t; j++) {
+ products[i][j] = i * j;
+}
+}
+ }
+Ans: no parameter and s and t is the free variable
+
+ii. BiFunction<U, V, R>  f = (double u, double v)  ? 
+(Note: the right hand side of the “?” is mathematical notation, not Java, but it can be converted to a large block of Java code having the same free variables. See lecture code to review the BiFunction functional interface.)
+
+Ans: u and v is the parameter and a, b, d and x are free variable
+
+iii. Comparator<String> comp = (s, t)  ?
+     {
+        if (ignoreCase == true) {
+           return s.compareToIgnoreCase(t); 
+        } else {
+           return s.compareTo(t);
+        } 
+   }
+
+Ans: s and t is parameter and ignoreCase is free variable
+
+
+
+
+h. An example of a method reference is
+ System.out::println
+Do the following:
+i. Convert this method reference to a lambda expression.
+ans: s->System.out.println(s)
+
+ii. Determine which type of method reference this is (in the lecture three different types of method reference were mentioned). Explain carefully. 
+Ans: Type: object::instanceMethod, because System.out is returning an instance of PrintStream object then we are calling println method from that object, though out is a static method of System class, still its returning PrintStream object.
+
+
+ 
+ 
