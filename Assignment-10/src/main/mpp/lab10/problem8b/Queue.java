@@ -1,0 +1,48 @@
+package mpp.lab10.problem8b;
+
+//Show the methods are not threadsafe.
+//Then modify so that they are threadsafe.
+public class Queue {
+	class Node {
+		Object value;
+		Node next;
+	}
+
+	private Node head;
+	private Node tail;
+	private int count;
+
+	synchronized public void add(Object newValue) {
+		Node n = new Node();
+		if (head == null)
+			head = n;
+		else
+			tail.next = n;
+		tail = n;
+		tail.value = newValue;
+		
+		count++;
+	}
+
+	synchronized public Object remove() {
+		if (head == null)
+			return null;
+		Node n = head;
+		head = n.next;
+		count--;
+		return n.value;
+	}
+	
+	public int getCount() {
+		return count;
+	}
+	public int count(){
+		int count = 0;
+		Node temp = head;
+		while (temp != null){
+			count++;
+			temp = temp.next;
+		}
+		return count;
+	}
+}
